@@ -1,10 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import taskApp from './components/taskApp';
 
-export default function App() {
+export default function taskApp() {
   return (
-    <taskApp/>
+    <View style={styles.container}>
+      <Text>Task</Text>
+      <StatusBar style="auto" />
+    </View>
   );
 }
 
@@ -16,3 +18,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
