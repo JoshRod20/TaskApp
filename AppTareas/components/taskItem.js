@@ -2,11 +2,15 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';  // Si usas íconos
 
-export default function TareaItem({ tarea, eliminarTarea }) {
+export default function TareaItem({ tarea, eliminarTarea, toggleCompletada }) {
   return (
     <View style={styles.item}>
-      {/* Asegúrate de envolver el texto dentro de <Text> */}
-      <Text style={styles.texto}>{tarea.texto}</Text>
+      {/* Hacer clic en el texto para marcar la tarea como completada */}
+      <TouchableOpacity onPress={() => toggleCompletada(tarea.id)}>
+        <Text style={[styles.texto, tarea.completada ? styles.completada : null]}>
+          {tarea.texto}
+        </Text>
+      </TouchableOpacity>
       <TouchableOpacity onPress={() => eliminarTarea(tarea.id)}>
         <AntDesign name="close" style={styles.iconoEliminar} />
       </TouchableOpacity>
@@ -27,6 +31,10 @@ const styles = StyleSheet.create({
   texto: {
     fontSize: 18,
     color: '#333',
+  },
+  completada: {
+    textDecorationLine: 'line-through',  // Estilo para marcar como completada
+    color: '#999',
   },
   iconoEliminar: {
     fontSize: 24,
