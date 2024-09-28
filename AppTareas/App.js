@@ -7,19 +7,26 @@ export default function App() {
   const [tareas, setTareas] = useState([]);
 
   const agregarTarea = (texto) => {
-    setTareas([...tareas, { id: Date.now().toString(), texto }]);
+    setTareas([...tareas, { id: Date.now().toString(), texto, completada: false }]);
   };
 
   const eliminarTarea = (id) => {
     setTareas(tareas.filter((tarea) => tarea.id !== id));
   };
 
+  const toggleCompletada = (id) => {
+    setTareas(
+      tareas.map((tarea) =>
+        tarea.id === id ? { ...tarea, completada: !tarea.completada } : tarea
+      )
+    );
+  };
+
   return (
     <View style={styles.contenedorPrincipal}>
-      {/* Asegúrate de que el título esté envuelto dentro de <Text> */}
       <Text style={styles.titulo}>Lista de Tareas</Text>
       <TareaInput agregarTarea={agregarTarea} />
-      <TareaLista tareas={tareas} eliminarTarea={eliminarTarea} />
+      <TareaLista tareas={tareas} eliminarTarea={eliminarTarea} toggleCompletada={toggleCompletada} />
     </View>
   );
 }

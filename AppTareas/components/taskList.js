@@ -1,19 +1,21 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { FlatList } from 'react-native';
 import TareaItem from './taskItem';
 
-export default function TareaLista({ tareas, eliminarTarea }) {
+const TareaLista = ({ tareas, eliminarTarea, toggleCompletada }) => {
   return (
-    <View style={styles.lista}>
-      {tareas.map((tarea) => (
-        <TareaItem key={tarea.id} tarea={tarea} eliminarTarea={eliminarTarea} />
-      ))}
-    </View>
+    <FlatList
+      data={tareas}
+      renderItem={({ item }) => (
+        <TareaItem
+          tarea={item}
+          eliminarTarea={eliminarTarea}
+          toggleCompletada={toggleCompletada}  // Pasar la función para alternar
+        />
+      )}
+      keyExtractor={(item) => item.id}
+    />
   );
-}
+};
 
-const styles = StyleSheet.create({
-  lista: {
-    marginTop: 20,
-  },
-});
+export default TareaLista;
