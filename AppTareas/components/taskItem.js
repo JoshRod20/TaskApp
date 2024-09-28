@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { AntDesign } from '@expo/vector-icons';  // Si usas íconos
+import { AntDesign } from '@expo/vector-icons';
 
 export default function TareaItem({ tarea, eliminarTarea, toggleCompletada }) {
   return (
