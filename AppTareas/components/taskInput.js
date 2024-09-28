@@ -9,8 +9,11 @@ export default function TareaInput({ agregarTarea }) {
   };
 
   const manejarAgregarTarea = () => {
-    agregarTarea(texto);
-    setTexto('');  // Limpiar el campo después de agregar
+    // Verifica que el texto no esté vacío
+    if (texto.trim()) {
+      agregarTarea(texto);
+      setTexto('');  // Limpiar el campo después de agregar
+    }
   };
 
   return (
