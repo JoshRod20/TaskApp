@@ -24,7 +24,7 @@ export default function App() {
 
   return (
     <View style={styles.contenedorPrincipal}>
-      <Text style={styles.titulo}>Lista de Tareas</Text>
+      <Text style={styles.titulo}>Aplicación de Tareas</Text>
       <TareaInput agregarTarea={agregarTarea} />
       <TareaLista tareas={tareas} eliminarTarea={eliminarTarea} toggleCompletada={toggleCompletada} />
     </View>
@@ -39,8 +39,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#f2f2f2',
   },
   titulo: {
+    textAlign: 'center',
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#333',
+    color: '#1630BE',
+    marginBottom: 15,
   },
 });

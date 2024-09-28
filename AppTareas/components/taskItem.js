@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
   item: {
     padding: 10,
     backgroundColor: '#f9f9f9',
+    borderRadius: 10,
     borderBottomWidth: 1,
     borderColor: '#ddd',
     flexDirection: 'row',
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
   },
   completada: {
     textDecorationLine: 'line-through',  // Estilo para marcar como completada
-    color: '#999',
+    color: '#1630BE',
   },
   iconoEliminar: {
     fontSize: 24,
