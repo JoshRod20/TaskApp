@@ -24,18 +24,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#f9f9f9',
     borderRadius: 10,
     borderBottomWidth: 1,
-    borderColor: '#ddd',
+    borderColor: '#7D2181',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
   texto: {
     fontSize: 18,
-    color: '#333',
+    color: '#7D2181',
   },
   completada: {
     textDecorationLine: 'line-through',  // Estilo para marcar como completada
-    color: '#1630BE',
+    color: '#7D2181',
   },
   iconoEliminar: {
     fontSize: 24,

@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#1630BE',
+    color: '#7D2181',
     marginBottom: 15,
   },
 });

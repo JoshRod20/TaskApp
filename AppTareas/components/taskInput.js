@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, StyleSheet } from 'react-native';
+import { View, TextInput, TouchableOpacity, Text, StyleSheet } from 'react-native';
 
 export default function TareaInput({ agregarTarea }) {
   const [texto, setTexto] = useState('');
@@ -24,7 +24,9 @@ export default function TareaInput({ agregarTarea }) {
         value={texto}
         onChangeText={manejarCambioTexto}
       />
-      <Button title="Agregar" onPress={manejarAgregarTarea} />
+      <TouchableOpacity style={styles.boton} onPress={manejarAgregarTarea}>
+        <Text style={styles.textoBoton}>Agregar</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -39,8 +41,20 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     borderBottomWidth: 1,
-    borderColor: '#1630BE',
+    borderColor: '#7D2181',
     marginRight: 10,
     padding: 8,
+  },
+  boton: {
+    backgroundColor: '#7D2181',
+    padding: 10,
+    borderRadius: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  textoBoton: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
