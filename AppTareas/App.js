@@ -5,7 +5,7 @@ import TareaLista from './components/taskList';  // Componente lista de tareas
 
 export default function App() {
   const [tareas, setTareas] = useState([]);
-
+  {/* id: Date.now() Genera un ID único basado en la marca de tiempo actual */}
   const agregarTarea = (texto) => {
     setTareas([...tareas, { id: Date.now().toString(), texto, completada: false }]);
   };
